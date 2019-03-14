@@ -32,4 +32,6 @@ copy.addEventListener('click', function(){
   el.select();
   document.execCommand('copy');
   document.body.removeChild(el);
+
+  window.alert('Copied!');
 })
