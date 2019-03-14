@@ -4,23 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Template Injecter</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
   </head>
   <body>
-    <h1 id="site-title">Enter details & hit submit</h1>
+    <h2 id="site-title">Template Maker</h2>
     <form action="#" id="form">
-      <label for="name">
-        Name:
+      <label for="name">Name:</label>
         <input type="text" id="name"/>
-      </label>
       <br/>
-      <label for="title">
-        Title:
+      <label for="title">Title:</label>
         <input type="text" id="title"/>
-      </label>
       <br/>
-      <input onclick="" type="submit" />
+      <button id="submit" type="submit">Submit</button>
     </form>
-    <h2>Result</h2>
+    <h2 id="result-title">Result</h2>
     <div id="output"></div>
     <br/>
     <button id="copy">Copy to clipboard</button>

@@ -1,0 +1,30 @@
+*, button {
+  font-family: 'Roboto';
+}
+label {
+  display: inline-block;
+  width: 50px;
+}
+
+input {
+  width: 130px;
+}
+
+#output {
+  background-color: rgba(0,0,0,0.05);
+}
+
+button {
+  display: inline-block;
+  margin: 8px 0px;
+  padding: 8px;
+  border: 1px solid rgba(0,0,0,0.05);
+  background-color: #ff5252;
+  color: white;
+  width: 190px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgba(0,0,0,0.3);
+}
