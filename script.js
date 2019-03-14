@@ -1,28 +1,35 @@
 var form = document.getElementById('form');
 var output = document.getElementById('output');
-var back = document.getElementById('back');
+var raw = document.getElementById('raw');
+var copy = document.getElementById('copy');
 
-form.addEventListener('submit', function () {
-  var name = document.getElementById('name').value;
-  var title = document.getElementById('title').value;
+// Hold temp
+var res;
 
-  var res = window.template
+// Handle Submit
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  var name = document.getElementById('name');
+  var title = document.getElementById('title');
+
+  var name = name.value;
+  var title = title.value;
+
+  res = window.template
     .replace('{{name}}', name)
-    .replace('{{title}}', title)
+    .replace('{{title}}', title);
 
   // Set output
   output.innerHTML = res;
-
-  output.style.display = 'block';
-  form.style.display = 'none';
-  back.style.display = 'block';
 });
 
-back.addEventListener('click', function() {
-  document.getElementById('name').value = '';
-  document.getElementById('title').value = '';
-
-  form.style.display = 'block';
-  output.style.display = 'none';
-  back.style.display = 'none';
-});
+// Copy to clipboard
+copy.addEventListener('click', function(){
+  const el = document.createElement('textarea');
+  el.value = res;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+})
